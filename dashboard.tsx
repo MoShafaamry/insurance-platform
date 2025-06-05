@@ -1,53 +1,11 @@
-import { LayoutDashboard, LineChart, Globe, Wallet, Box, LifeBuoy, Settings } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import SidebarLayout from "@/components/sidebar-layout"
 
 export default function Dashboard() {
   return (
-    <div className="flex h-screen bg-black text-white">
-      {/* Sidebar */}
-      <div className="w-64 border-r border-gray-800 p-4">
-        <div className="flex items-center gap-2 mb-8">
-          <Box className="h-6 w-6" />
-          <h1 className="text-xl font-semibold">Vaultify</h1>
-        </div>
-
-        <div className="space-y-1">
-          <Button variant="ghost" className="w-full justify-start">
-            <LayoutDashboard className="mr-2 h-4 w-4" />
-            Dashboard
-          </Button>
-          <Button variant="ghost" className="w-full justify-start">
-            <LineChart className="mr-2 h-4 w-4" />
-            Statistics & Income
-          </Button>
-          <Button variant="ghost" className="w-full justify-start">
-            <Globe className="mr-2 h-4 w-4" />
-            Market
-          </Button>
-          <Button variant="ghost" className="w-full justify-start">
-            <Wallet className="mr-2 h-4 w-4" />
-            Funding
-          </Button>
-          <Button variant="ghost" className="w-full justify-start">
-            <Box className="mr-2 h-4 w-4" />
-            Yield Vaults
-          </Button>
-          <Button variant="ghost" className="w-full justify-start">
-            <LifeBuoy className="mr-2 h-4 w-4" />
-            Support
-          </Button>
-          <Button variant="ghost" className="w-full justify-start">
-            <Settings className="mr-2 h-4 w-4" />
-            Settings
-          </Button>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="flex-1 overflow-auto">
-        <div className="p-8">
+    <SidebarLayout>
+      <div className="p-8 text-white">
           {/* Header */}
           <div className="flex justify-between items-center mb-8">
             <div>
@@ -123,8 +81,7 @@ export default function Dashboard() {
             ))}
           </div>
         </div>
-      </div>
-    </div>
+      </SidebarLayout>
   )
 }
 
